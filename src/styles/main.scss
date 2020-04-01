@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+// Initial variables
+@import "bulma/sass/utilities/initial-variables";
+
+// Custom colrs
+@import "./custom-colors";
+
+// Derived variables
+@import "bulma/sass/utilities/derived-variables";
+
+// Custom variables
+@import "./custom";
+
+// Custom components
+@import "./components/navbar";
+@import "./components/typewriter";
+
+// Page specific styles
+@import "./pages/index";
+
+// Layout styles
+@import "./layout/layout";
+
+// Utilities
+@import "bulma/sass/utilities/_all.sass";
+
+// Base
+@import "bulma/sass/base/_all.sass";
+
+// All
+@import "bulma/bulma.sass";

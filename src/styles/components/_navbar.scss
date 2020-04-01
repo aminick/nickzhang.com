@@ -1,0 +1,15 @@
+$navbar-background-color: transparent;
+$navbar-breakpoint: $tablet;
+// $navbar-item-hover-background-color: #44475a;
+
+.navbar {
+  height: 3.25rem;
+}
+
+.navbar .title {
+  line-height: 1.5;
+}
+
+.navbar .navbar-brand {
+  margin-left: 0 !important;
+}

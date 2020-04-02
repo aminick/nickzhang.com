@@ -1,11 +1,20 @@
 .hero {
   width: 100vw;
-  margin-top: calc(-6.25rem - 20px);
   position: relative;
   margin-left: -50vw;
   left: 50%;
-  background: #282a36;
+  background: $charade;
 }
 
-.hero-body {
+.button.preview {
+  display: block;
+  text-align: left;
+  height: auto;
+  margin-left: -1rem;
+  padding: 0;
+}
+
+.preview-container {
+  padding: 1rem;
+  // border-radius: 0.3rem;
 }

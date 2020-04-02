@@ -6,6 +6,8 @@
 // Custom colrs
 @import "./custom-colors";
 
+@import "./custom-derived";
+
 // Derived variables
 @import "bulma/sass/utilities/derived-variables";
 
@@ -14,6 +16,8 @@
 
 // Custom components
 @import "./components/navbar";
+@import "./components/section";
+@import "./components/footer";
 @import "./components/typewriter";
 
 // Page specific styles

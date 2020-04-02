@@ -6,6 +6,9 @@ $purple-invert: findColorInvert($purple);
 $charade: #282a36;
 $charade-invert: findColorInvert($charade);
 
+$mine-shaft: #202020;
+$mine-shaft-invert: findColorInvert($mine-shaft);
+
 $custom-colors: (
   "purple": (
     $purple,
@@ -14,5 +17,9 @@ $custom-colors: (
   "charade": (
     $charade,
     $charade-invert
+  ),
+  "mine-shaft": (
+    $mine-shaft,
+    $mine-shaft-invert
   )
 );

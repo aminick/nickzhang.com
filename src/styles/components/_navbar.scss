@@ -1,15 +1,35 @@
 $navbar-background-color: transparent;
 $navbar-breakpoint: $tablet;
-// $navbar-item-hover-background-color: #44475a;
+$navbar-item-hover-background-color: #44475a;
 
 .navbar {
-  height: 3.25rem;
+  height: 10.75rem;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
 }
 
-.navbar .title {
-  line-height: 1.5;
+.navbar.sticky {
+  background-color: #131313;
+  height: 4.25rem;
 }
 
-.navbar .navbar-brand {
+.navbar-brand {
   margin-left: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.navbar-item .button {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.navbar-item .button:hover,
+.navbar-item .button:active,
+.navbar-item .button:focus {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-color: transparent;
 }

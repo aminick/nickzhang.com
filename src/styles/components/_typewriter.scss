@@ -7,5 +7,5 @@
 .typewriter > span {
   border-right: 0.08em solid $purple;
   animation: blink 1s steps(1) infinite;
-  white-space: pre;
+  white-space: pre-wrap;
 }

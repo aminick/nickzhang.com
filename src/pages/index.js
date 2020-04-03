@@ -21,10 +21,8 @@ const dummyData = [
 
 const renderArticlePreview = ({ slug, title }) => {
   return (
-    <Link className="button preview is-mine-shaft" key={slug} to="/">
-      <div className="preview-container">
-        <h5 className="subtitle is-size-5">{title}</h5>
-      </div>
+    <Link className="preview" key={slug} to="/">
+      <h5 className="subtitle is-size-5">{title}</h5>
     </Link>
   );
 };
@@ -52,14 +50,14 @@ const IndexPage = () => {
           <h1 className="title">Latest Content</h1>
           <List items={dummyData} render={renderArticlePreview} />
         </section>
-        <section className="section">
+        {/* <section className="section">
           <h1 className="title">Projects</h1>
           <List items={dummyData} render={renderArticlePreview} />
         </section>
         <section className="section">
           <h1 className="title">Playground</h1>
           <List items={dummyData} render={renderArticlePreview} />
-        </section>
+        </section> */}
       </Layout>
     </>
   );

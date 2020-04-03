@@ -6,15 +6,18 @@
   background: $charade;
 }
 
-.button.preview {
-  display: block;
-  text-align: left;
-  height: auto;
-  margin-left: -1rem;
-  padding: 0;
+.hero-body {
+  padding: 3rem 3.5rem !important;
 }
 
-.preview-container {
-  padding: 1rem;
-  // border-radius: 0.3rem;
+.preview {
+  display: block;
+  padding: 1rem 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+  border-radius: 0.2rem;
+}
+
+.preview:hover {
+  background-color: #303030;
 }

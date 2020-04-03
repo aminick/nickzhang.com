@@ -5,14 +5,14 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/main.scss";
 
-const Layout = ({ navbarTheme, children }) => {
+const Layout = ({ children }) => {
   return (
     <div className="layout-container">
       <Helmet>
         <meta name="description" content={config.siteDescription} />
         <html lang="en" />
       </Helmet>
-      <Navbar theme={navbarTheme} />
+      <Navbar />
       <div className="container">
         {children}
         <Footer config={config} />

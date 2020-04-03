@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
-const Navbar = ({ theme = "mine-shaft" }) => {
+const Navbar = () => {
   const [sticky, setSticky] = useState(false);
 
   useEffect(() => {

@@ -1,0 +1,18 @@
+body {
+  font-family: $family-primary;
+  color: rgba($color: #fff, $alpha: 0.87);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+ul > li {
+  margin-top: 0;
+}

@@ -1,0 +1,22 @@
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($color: transparent, $alpha: 0.38);
+  color: rgba($color: #fff, $alpha: 0.6);
+  font-size: 1rem;
+  border-color: transparent;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: calc(0.5em - 1px);
+  padding-bottom: calc(0.5em - 1px);
+  border-radius: 4px;
+  height: 2.5em;
+}
+
+.button:hover,
+.button:active,
+.button:focus {
+  color: rgba($color: #fff, $alpha: 0.87);
+  background-color: rgba($color: transparent, $alpha: 0.6);
+}

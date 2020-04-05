@@ -3,6 +3,8 @@
 // Initial variables
 @import "bulma/sass/utilities/initial-variables";
 
+// @import "./abstract/variables";
+
 // Custom colrs
 @import "./custom-colors";
 
@@ -14,11 +16,15 @@
 // Custom variables
 @import "./custom";
 
+@import "./base/reset";
+@import "./base/typography";
+
 // Custom components
 @import "./components/navbar";
 @import "./components/section";
 @import "./components/footer";
 @import "./components/typewriter";
+@import "./components/button";
 
 // Page specific styles
 @import "./pages/index";
@@ -30,13 +36,15 @@
 @import "bulma/sass/utilities/_all.sass";
 
 // Base
-@import "bulma/sass/base/_all.sass";
+// @import "bulma/sass/base/_all.sass";
+// @import "../../node_modules/bulma/sass/base/generic.sass";
+// @import "../../node_modules/bulma/sass/base/helpers.sass";
 
 // All
 // @import "bulma/bulma.sass";
 
 @import "bulma/sass/layout/hero.sass";
 @import "../../node_modules/bulma/sass/layout/section.sass";
-@import "../../node_modules/bulma/sass/elements/button.sass";
+// @import "../../node_modules/bulma/sass/elements/button.sass";
 @import "../../node_modules/bulma/sass/elements/container.sass";
 @import "bulma/sass/elements/title.sass";

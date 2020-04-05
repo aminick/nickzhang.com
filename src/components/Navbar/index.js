@@ -7,7 +7,7 @@ const Navbar = () => {
   useEffect(() => {
     const isSticky = () => {
       setIsActive(false);
-      if (window.scrollY > 20) {
+      if (window.scrollY > 15) {
         setSticky(true);
       } else setSticky(false);
     };
@@ -21,7 +21,7 @@ const Navbar = () => {
   }, []);
 
   const handleBurgerClick = () => {
-    setIsActive(prev => !prev);
+    setIsActive((prev) => !prev);
   };
 
   return (
@@ -34,7 +34,7 @@ const Navbar = () => {
         <div className="navbar-container">
           <div className="navbar-brand">
             <Link to="/">
-              <h1 className="title is-3 has-text-purple">N</h1>
+              <h3>N</h3>
             </Link>
           </div>
 
@@ -47,7 +47,7 @@ const Navbar = () => {
 
         <ul className="navbar-menu">
           <li>
-            <Link className="button" to="/">
+            <Link className="button" to="/about">
               About me
             </Link>
           </li>

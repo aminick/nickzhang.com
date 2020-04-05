@@ -37,9 +37,9 @@ const Typewriter = ({ data }) => {
   }, []);
 
   return (
-    <h1 className="typewriter title has-text-light">
+    <h3 className="typewriter">
       <span>{text}</span>
-    </h1>
+    </h3>
   );
 };
 

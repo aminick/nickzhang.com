@@ -73,7 +73,6 @@ export const listingQuery = graphql`
           frontmatter {
             title
             tags
-            cover
             date
           }
         }

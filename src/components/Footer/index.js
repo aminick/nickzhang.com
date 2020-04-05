@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
 import UserLinks from "../UserLinks/UserLinks";
-import "./Footer.css";
 
 class Footer extends Component {
   render() {
@@ -15,7 +14,7 @@ class Footer extends Component {
       <footer className="footer">
         {/* <UserLinks config={config} labeled /> */}
         <div className="notice-container">
-          <h4>{copyright}</h4>
+          <h6>{copyright}</h6>
 
           {/* <Link to={url}>
             <button>Subscribe</button>

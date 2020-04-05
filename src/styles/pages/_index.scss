@@ -1,3 +1,14 @@
+@media screen and (min-width: $tablet) {
+  .index-page .navbar.is-active,
+  .index-page .navbar {
+    background-color: $charade;
+  }
+}
+
+.index-page .layout-container {
+  margin: 0 auto;
+}
+
 .hero {
   width: 100vw;
   position: relative;
@@ -10,14 +21,62 @@
   padding: 3rem 3.5rem !important;
 }
 
-.preview {
+// Section Styles
+.section-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.section-option {
+  margin-left: 2em;
+}
+
+.section-option.button {
+  font-size: 0.85rem;
+}
+
+.section-title {
+  font-weight: 300;
+}
+
+// Preview Styles
+.preview-container {
+  // padding: 10px 0;
+}
+
+.preview-container + .preview-container {
+  border-top: 1px solid #181818;
+}
+
+.preview-link {
   display: block;
-  padding: 1rem 20px;
+  padding: 1.5rem 20px;
   margin-left: -20px;
   margin-right: -20px;
   border-radius: 0.2rem;
 }
 
-.preview:hover {
+.preview-link:hover {
+  // color: white;
+  color: $purple;
   background-color: #303030;
+}
+
+.preview-link .article-title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 2.25rem;
+}
+
+.preview-link .article-date {
+  margin: 0.5rem 0 0 0;
+  color: rgba($color: #fff, $alpha: 0.6);
+  font-weight: 100;
+  font-size: 1.25rem;
+}
+
+.preview-link:hover .article-date {
+  // color: white;
+  color: rgba($color: $purple, $alpha: 0.87);
 }

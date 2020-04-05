@@ -20,7 +20,13 @@ body {
 }
 
 .layout-container {
+  position: relative;
   min-height: 100vh;
-  margin: 3rem auto;
-  padding: 20px 3.5rem;
+  margin: 10.25rem auto;
+  // padding: 20px 3.5rem;
+  padding: 1rem 3.5rem;
+}
+
+.layout-container .container {
+  padding-bottom: 4.5rem;
 }

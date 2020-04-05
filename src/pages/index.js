@@ -2,44 +2,37 @@ import React from "react";
 import Layout from "../layout";
 import Typewriter from "../components/Typewriter";
 import List from "../components/List";
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 
-const dummyData = [
-  {
-    slug: "/slug1/",
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-  },
-  {
-    slug: "/slug2/",
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-  },
-  {
-    slug: "/slug3/",
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-  }
-];
-
-const renderArticlePreview = ({ slug, title }) => {
+const renderArticlePreview = ({ node }) => {
+  const {
+    id,
+    frontmatter: { title, tag, date },
+    fields: { slug },
+  } = node;
   return (
-    <Link className="preview" key={slug} to="/">
-      <h5 className="subtitle is-size-5">{title}</h5>
-    </Link>
+    <div className="preview-container">
+      <Link className="preview-link" key={id} to={slug}>
+        <h3 className="article-title">{title}</h3>
+        <p className="article-date">{date}</p>
+      </Link>
+    </div>
   );
 };
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   return (
-    <>
+    <div className="index-page">
       <section className="hero is-fullheight">
         <div className="hero-body">
           <div className="container">
-            <h1 className="title is-size-1">Hello.</h1>
-            <h1 className="title">My name is Nick Zhang.</h1>
+            <h1 className="">Hello.</h1>
+            <h3 className="">My name is Nick Zhang.</h3>
             <Typewriter
               data={[
                 "I code JavaScript.",
                 "I love React.",
-                "Something really really long."
+                "Something really really long.",
               ]}
             />
           </div>
@@ -47,20 +40,42 @@ const IndexPage = () => {
       </section>
       <Layout>
         <section className="section">
-          <h1 className="title">Latest Content</h1>
-          <List items={dummyData} render={renderArticlePreview} />
+          <div className="section-header">
+            <h1 className="section-title">Latest Articles</h1>
+            <Link className="section-option button" to="/about">
+              View all
+            </Link>
+          </div>
+          <List
+            items={data.allMarkdownRemark.edges}
+            render={renderArticlePreview}
+          />
         </section>
-        {/* <section className="section">
-          <h1 className="title">Projects</h1>
-          <List items={dummyData} render={renderArticlePreview} />
-        </section>
-        <section className="section">
-          <h1 className="title">Playground</h1>
-          <List items={dummyData} render={renderArticlePreview} />
-        </section> */}
       </Layout>
-    </>
+    </div>
   );
 };
 
 export default IndexPage;
+
+export const query = graphql`
+  query IndexQuery {
+    allMarkdownRemark(
+      filter: { fields: { type: { eq: "posts" } } }
+      sort: { fields: fields___date, order: DESC }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            tags
+            date(formatString: "YYYY-MM-DD")
+          }
+        }
+      }
+    }
+  }
+`;

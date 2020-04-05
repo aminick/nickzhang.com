@@ -14,7 +14,7 @@
 }
 
 .navbar.sticky {
-  background-color: #131313;
+  background-color: #131313 !important;
   height: 4.25rem;
 }
 
@@ -31,6 +31,10 @@
 .navbar-brand {
   display: flex;
   align-items: center;
+}
+
+.navbar-brand h3 {
+  color: #bd93f9;
 }
 
 .navbar-menu {
@@ -50,6 +54,7 @@
 }
 
 .navbar .button {
+  color: rgba($color: #fff, $alpha: 0.87);
   background-color: transparent;
   border-color: transparent;
 }
@@ -72,10 +77,9 @@
 }
 
 .navbar-burger span {
-  background-color: white;
   display: block;
   height: 1px;
-  border-bottom: 0.1rem solid white;
+  border-bottom: 0.1rem solid rgba($color: #fff, $alpha: 0.87);
 }
 
 @media screen and (min-width: $tablet) {
@@ -83,7 +87,7 @@
   .navbar {
     height: 10.25rem;
     display: flex;
-    background-color: $charade;
+    background-color: $mine-shaft;
   }
 
   .navbar.sticky.is-active {

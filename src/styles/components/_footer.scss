@@ -1,2 +1,30 @@
-$footer-background-color: $mine-shaft;
-$footer-padding: 3rem 0 6rem;
+.footer {
+  justify-content: center;
+  align-content: center;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  margin: 3rem 0;
+  height: 4.5rem;
+}
+
+.notice-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+@media (max-width: 640px - 1px) {
+  .notice-container {
+    justify-content: space-around;
+  }
+}
+
+.notice-container h6 {
+  font-weight: 200;
+  text-align: center;
+  margin: 0;
+}

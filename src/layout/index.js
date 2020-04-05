@@ -8,16 +8,14 @@ import "../styles/main.scss";
 const Layout = ({ children }) => {
   return (
     <>
+      <Helmet>
+        <meta name="description" content={config.siteDescription} />
+        <html lang="en" />
+      </Helmet>
       <Navbar />
       <div className="layout-container">
-        <Helmet>
-          <meta name="description" content={config.siteDescription} />
-          <html lang="en" />
-        </Helmet>
-        <div className="container">
-          {children}
-          <Footer config={config} />
-        </div>
+        <div className="container">{children}</div>
+        <Footer config={config} />
       </div>
     </>
   );

@@ -12,20 +12,22 @@ class Footer extends Component {
     }
     return (
       <footer className="footer">
-        {/* <UserLinks config={config} labeled /> */}
-        <div className="notice-container">
-          <h6>{copyright}</h6>
+        <div className="container">
+          {/* <UserLinks config={config} labeled /> */}
+          <div className="notice-container">
+            <h6>{copyright}</h6>
 
-          {/* <Link to={url}>
+            {/* <Link to={url}>
             <button>Subscribe</button>
           </Link> */}
-          {/* <h4>
+            {/* <h4>
             Based on{" "}
             <a href="https://github.com/Vagr9K/gatsby-advanced-starter">
               Gatsby Advanced Starter
             </a>
             .
           </h4> */}
+          </div>
         </div>
       </footer>
     );

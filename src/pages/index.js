@@ -13,7 +13,7 @@ const renderArticlePreview = ({ node }) => {
   return (
     <div className="preview-container">
       <Link className="preview-link" key={id} to={slug}>
-        <h3 className="article-title">{title}</h3>
+        <h4 className="article-title">{title}</h4>
         <p className="article-date">{date}</p>
       </Link>
     </div>
@@ -39,18 +39,20 @@ const IndexPage = ({ data }) => {
         </div>
       </section>
       <Layout>
-        <section className="section">
-          <div className="section-header">
-            <h1 className="section-title">Latest Articles</h1>
-            <Link className="section-option button" to="/about">
-              View all
-            </Link>
-          </div>
-          <List
-            items={data.allMarkdownRemark.edges}
-            render={renderArticlePreview}
-          />
-        </section>
+        <div className="container">
+          <section className="section">
+            <div className="section-header">
+              <h1 className="section-title">Latest Articles</h1>
+              <Link className="section-option button" to="/about">
+                View all
+              </Link>
+            </div>
+            <List
+              items={data.allMarkdownRemark.edges}
+              render={renderArticlePreview}
+            />
+          </section>
+        </div>
       </Layout>
     </div>
   );

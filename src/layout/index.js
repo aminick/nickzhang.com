@@ -13,10 +13,8 @@ const Layout = ({ children }) => {
         <html lang="en" />
       </Helmet>
       <Navbar />
-      <div className="layout-container">
-        <div className="container">{children}</div>
-        <Footer config={config} />
-      </div>
+      <div className="layout-container">{children}</div>
+      <Footer config={config} />
     </>
   );
 };

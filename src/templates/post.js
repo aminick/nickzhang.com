@@ -1,6 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { graphql } from "gatsby";
+import { Link, graphql } from "gatsby";
 import Layout from "../layout";
 import UserInfo from "../components/UserInfo/UserInfo";
 import Disqus from "../components/Disqus/Disqus";
@@ -22,10 +22,22 @@ const PostTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <header>
-        <h1>{title}</h1>
-      </header>
-      <div className="post" dangerouslySetInnerHTML={{ __html: html }} />
+      <div className="content-container">
+        <header className="content-header">
+          <h1>{title}</h1>
+          <div className="meta-container">
+            <p className="date">{date}</p>
+            <div className="tags-container">
+              {tags.map((tag) => (
+                <Link to="/" className="button" key={tag}>
+                  {tag}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </header>
+        <div className="post" dangerouslySetInnerHTML={{ __html: html }} />
+      </div>
     </Layout>
   );
 };
@@ -73,7 +85,7 @@ export const pageQuery = graphql`
       timeToRead
       frontmatter {
         title
-        date
+        date(formatString: "YYYY-MM-DD")
         category
         tags
       }

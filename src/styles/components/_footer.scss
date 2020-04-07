@@ -4,8 +4,14 @@
   padding: 10px 0;
   // position: absolute;
   bottom: 0;
-  margin: 3rem 0;
+  margin: 3rem 1.5rem;
   height: 4.5rem;
+}
+
+@media screen and (min-width: $tablet) {
+  .footer {
+    margin: 3rem 3.5rem;
+  }
 }
 
 .notice-container {

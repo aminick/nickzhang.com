@@ -28,11 +28,12 @@ const PostTemplate = ({ data }) => {
           <div className="meta-container">
             <p className="date">{date}</p>
             <div className="tags-container">
-              {tags.map((tag) => (
-                <Link to="/" className="button" key={tag}>
-                  {tag}
-                </Link>
-              ))}
+              {tags &&
+                tags.map((tag) => (
+                  <Link to="/" className="button" key={tag}>
+                    {tag}
+                  </Link>
+                ))}
             </div>
           </div>
         </header>

@@ -19,14 +19,11 @@ module.exports = {
     },
   },
   plugins: [
-    "gatsby-plugin-sass",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-lodash",
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "assets",
-        path: `${__dirname}/static/`,
+        path: `${__dirname}/static/assets`,
       },
     },
     // {
@@ -50,6 +47,18 @@ module.exports = {
         path: `${__dirname}/content/pages`,
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "projects",
+        path: `${__dirname}/content/projects`,
+      },
+    },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sass",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-lodash",
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -84,8 +93,6 @@ module.exports = {
         color: config.themeColor,
       },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-twitter",
     "gatsby-plugin-sitemap",

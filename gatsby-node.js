@@ -4,9 +4,11 @@ const path = require("path");
 const _ = require("lodash");
 const moment = require("moment");
 const siteConfig = require("./data/SiteConfig");
+const { fmImagesToRelative } = require("gatsby-remark-relative-images");
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
+  fmImagesToRelative(node);
   let slug;
   if (node.internal.type === "MarkdownRemark") {
     const fileNode = getNode(node.parent);
@@ -42,7 +44,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  const postPage = path.resolve("src/templates/post.js");
+  const postTemplate = path.resolve("src/templates/post.js");
+  const pageTemplate = path.resolve("src/templates/page.js");
   // const tagPage = path.resolve("src/templates/tag.jsx");
   // const categoryPage = path.resolve("src/templates/category.jsx");
   const listingPage = path.resolve("./src/templates/listing.jsx");
@@ -55,6 +58,7 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             fields {
               slug
+              type
             }
             frontmatter {
               title
@@ -78,27 +82,27 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const postsEdges = markdownQueryResult.data.allMarkdownRemark.edges;
 
-  // Sort posts
-  postsEdges.sort((postA, postB) => {
-    const dateA = moment(
-      postA.node.frontmatter.date,
-      siteConfig.dateFromFormat
-    );
+  // // Sort posts
+  // postsEdges.sort((postA, postB) => {
+  //   const dateA = moment(
+  //     postA.node.frontmatter.date,
+  //     siteConfig.dateFromFormat
+  //   );
 
-    const dateB = moment(
-      postB.node.frontmatter.date,
-      siteConfig.dateFromFormat
-    );
+  //   const dateB = moment(
+  //     postB.node.frontmatter.date,
+  //     siteConfig.dateFromFormat
+  //   );
 
-    if (dateA.isBefore(dateB)) return 1;
-    if (dateB.isBefore(dateA)) return -1;
+  //   if (dateA.isBefore(dateB)) return 1;
+  //   if (dateB.isBefore(dateA)) return -1;
 
-    return 0;
-  });
+  //   return 0;
+  // });
 
   // Paging
-  const { postsPerPage } = siteConfig;
-  const pageCount = Math.ceil(postsEdges.length / postsPerPage);
+  // const { postsPerPage } = siteConfig;
+  // const pageCount = Math.ceil(postsEdges.length / postsPerPage);
 
   // [...Array(pageCount)].forEach((_val, pageNum) => {
   //   createPage({
@@ -116,34 +120,36 @@ exports.createPages = async ({ graphql, actions }) => {
   // Post page creating
   postsEdges.forEach((edge, index) => {
     // Generate a list of tags
-    if (edge.node.frontmatter.tags) {
-      edge.node.frontmatter.tags.forEach((tag) => {
-        tagSet.add(tag);
+    // if (edge.node.frontmatter.tags) {
+    //   edge.node.frontmatter.tags.forEach((tag) => {
+    //     tagSet.add(tag);
+    //   });
+    // }
+
+    // Generate a list of categories
+    // if (edge.node.frontmatter.category) {
+    //   categorySet.add(edge.node.frontmatter.category);
+    // }
+
+    if (edge.node.fields.type === "posts") {
+      createPage({
+        path: edge.node.fields.slug,
+        component: postTemplate,
+        context: {
+          slug: edge.node.fields.slug,
+        },
       });
     }
 
-    // Generate a list of categories
-    if (edge.node.frontmatter.category) {
-      categorySet.add(edge.node.frontmatter.category);
+    if (edge.node.fields.type === "pages") {
+      createPage({
+        path: edge.node.fields.slug,
+        component: pageTemplate,
+        context: {
+          slug: edge.node.fields.slug,
+        },
+      });
     }
-
-    // Create post pages
-    const nextID = index + 1 < postsEdges.length ? index + 1 : 0;
-    const prevID = index - 1 >= 0 ? index - 1 : postsEdges.length - 1;
-    const nextEdge = postsEdges[nextID];
-    const prevEdge = postsEdges[prevID];
-
-    createPage({
-      path: edge.node.fields.slug,
-      component: postPage,
-      context: {
-        slug: edge.node.fields.slug,
-        nexttitle: nextEdge.node.frontmatter.title,
-        nextslug: nextEdge.node.fields.slug,
-        prevtitle: prevEdge.node.frontmatter.title,
-        prevslug: prevEdge.node.fields.slug,
-      },
-    });
   });
 
   // //  Create tag pages

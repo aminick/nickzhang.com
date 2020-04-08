@@ -2,6 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import { Link, graphql } from "gatsby";
 import Layout from "../layout";
+import { formatDate } from "../utils";
 import UserInfo from "../components/UserInfo/UserInfo";
 import Disqus from "../components/Disqus/Disqus";
 import PostTags from "../components/PostTags/PostTags";
@@ -26,7 +27,7 @@ const PostTemplate = ({ data }) => {
         <header className="content-header">
           <h1>{title}</h1>
           <div className="meta-container">
-            <p className="date">{date}</p>
+            <p className="date">{formatDate(date)}</p>
             <div className="tags-container">
               {tags &&
                 tags.map((tag) => (

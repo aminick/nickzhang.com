@@ -34,7 +34,7 @@ const Navbar = () => {
         <div className="navbar-container">
           <div className="navbar-brand">
             <Link to="/">
-              <h3>N</h3>
+              <h3>NZ</h3>
             </Link>
           </div>
 
@@ -45,23 +45,17 @@ const Navbar = () => {
           </div>
         </div>
 
-        <ul className="navbar-menu">
-          <li>
-            <Link className="button" to="/about">
-              About me
-            </Link>
-          </li>
-          <li>
-            <Link className="button" to="/">
-              Blog
-            </Link>
-          </li>
-          <li>
-            <Link className="button" to="/">
-              Contact
-            </Link>
-          </li>
-        </ul>
+        <div className="navbar-menu">
+          <Link className="button" to="/about-me" activeClassName="active">
+            About me
+          </Link>
+          <Link className="button" to="/blog" activeClassName="active">
+            Blog
+          </Link>
+          <Link className="button" to="/contact" activeClassName="active">
+            Contact
+          </Link>
+        </div>
       </div>
     </nav>
   );

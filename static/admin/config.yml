@@ -4,10 +4,10 @@ backend:
   repo: aminick/nickzhang.com
   # name: git-gateway
 
-local_backend: true
+# local_backend: true
 
-media_folder: static/assets
-public_folder: assets
+media_folder: "/static/assets"
+public_folder: "/assets"
 
 collections:
   - name: blog
@@ -29,3 +29,14 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: projects
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    fields:
+      - { label: "Thumbnail", name: "thumbnail", widget: "image" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Source Url", name: "sourceUrl", widget: "string" }
+      - { label: "Project Url", name: "projectUrl", widget: "string" }

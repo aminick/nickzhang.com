@@ -28,16 +28,16 @@
   align-items: center;
 }
 
+.section-header .title {
+  font-size: 3rem;
+}
+
 .section-option {
   margin-left: 2em;
 }
 
 .section-option.button {
   font-size: 0.85rem;
-}
-
-.section-title {
-  font-weight: 300;
 }
 
 // Preview Styles
@@ -65,18 +65,95 @@
 
 .preview-link .article-title {
   margin: 0;
-  font-weight: 500;
-  font-size: 2.25rem;
+  font-weight: bold;
+  font-size: 2rem;
 }
 
 .preview-link .article-date {
-  margin: 0.5rem 0 0 0;
-  color: rgba($color: #fff, $alpha: 0.6);
-  font-weight: 100;
-  font-size: 1.25rem;
+  margin: 0.1rem 0 0 0 !important;
+  color: rgba($color: #fff, $alpha: 0.87);
+  font-weight: 600;
+  font-size: 1.125rem;
 }
 
 .preview-link:hover .article-date {
   // color: white;
   color: rgba($color: $purple, $alpha: 0.87);
+}
+
+// Projects Preview
+.project-preview-container {
+  display: flex;
+  border-radius: 8px;
+  background-color: rgba($color: transparent, $alpha: 0.2);
+  overflow: hidden;
+}
+
+.project-preview-container:hover {
+  background-color: rgba($color: transparent, $alpha: 0.6);
+}
+
+.project-preview-container:hover .subtitle-custom {
+  color: white;
+}
+
+.project-preview-container:hover .description {
+  color: rgba($color: #fff, $alpha: 0.87);
+}
+
+.project-preview-container + .project-preview-container {
+  margin: 1.5rem 0;
+}
+
+.project-thumbnail {
+  flex-shrink: 0;
+  width: 25%;
+}
+
+.thumbnail-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.thumbnail-wrapper > div {
+  padding-bottom: 0 !important;
+}
+
+.project-meta {
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+.project-meta .subtitle-custom {
+  font-size: 1.8rem;
+  margin: 0 0 1rem 0;
+}
+
+.project-meta .description {
+  font-size: 1.25em;
+  color: rgba($color: #fff, $alpha: 0.6);
+  margin: 0 0 1rem 0;
+}
+
+.project-meta .button {
+  float: right;
+  margin-left: 0.25rem;
+}
+
+@media screen and (min-width: $tablet) {
+  .project-meta {
+    padding: 1.25rem 3rem;
+  }
+  .project-meta .subtitle-custom {
+    font-size: 2rem;
+  }
+
+  .project-meta .description {
+    font-size: 1.5rem;
+  }
+
+  .project-meta .subtitle-custom,
+  .project-meta .description {
+    // margin: 1.75rem 0;
+  }
 }

@@ -1,5 +1,7 @@
 import React from "react";
 import Layout from "../layout";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Typewriter from "../components/Typewriter";
 import List from "../components/List";
 import { Link, graphql } from "gatsby";
@@ -9,7 +11,7 @@ import { formatDate } from "../utils";
 const renderArticlePreview = ({ node }) => {
   const {
     id,
-    frontmatter: { title, tag, date },
+    frontmatter: { title, date },
     fields: { slug },
     timeToRead,
   } = node;
@@ -31,12 +33,7 @@ const renderProjectPreview = ({ node }) => {
     frontmatter: { title, description, thumbnail, date, sourceUrl, projectUrl },
   } = node;
   return (
-    <a
-      className="project-preview-container"
-      href={projectUrl}
-      target="_blank"
-      key={id}
-    >
+    <div className="project-preview-container" key={id}>
       <div className="project-thumbnail">
         <Img
           className="thumbnail-wrapper"
@@ -44,16 +41,30 @@ const renderProjectPreview = ({ node }) => {
         ></Img>
       </div>
       <div className="project-meta">
-        <h4 className="subtitle-custom">{title}</h4>
+        <div className="header">
+          <h4 className="subtitle-custom">{title}</h4>
+          <div className="project-options header">
+            <a className="button" href={sourceUrl} target="_blank">
+              <FontAwesomeIcon icon={faGithub} />
+              Source
+            </a>
+            <a className="button" href={projectUrl} target="_blank">
+              View
+            </a>
+          </div>
+        </div>
         <h4 className="description">{description}</h4>
-        {/* <a className="button" href={sourceUrl}>
-          Source
-        </a>
-        <a className="button" href={projectUrl}>
-          View
-        </a> */}
+        <div className="project-options bottom">
+          <a className="button" href={sourceUrl} target="_blank">
+            <FontAwesomeIcon icon={faGithub} />
+            Source
+          </a>
+          <a className="button" href={projectUrl} target="_blank">
+            View
+          </a>
+        </div>
       </div>
-    </a>
+    </div>
   );
 };
 
@@ -76,8 +87,14 @@ const IndexPage = ({ data }) => {
             />
           </div>
         </div>
+        <div className="hero-foot">
+          <div className="down-pointer">
+            <a href="#main">👇🏻</a>
+          </div>
+        </div>
       </section>
       <Layout>
+        <div id="main"></div>
         <div className="container">
           <section className="section">
             <div className="section-header">
@@ -110,7 +127,7 @@ export const query = graphql`
     allMarkdownRemark(
       filter: { fields: { type: { eq: "posts" } } }
       sort: { fields: fields___date, order: DESC }
-      limit: 2
+      limit: 3
     ) {
       edges {
         node {
@@ -119,7 +136,6 @@ export const query = graphql`
           }
           frontmatter {
             title
-            tags
             date(formatString: "YYYY-MM-DD")
           }
           timeToRead

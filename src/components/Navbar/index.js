@@ -34,7 +34,7 @@ const Navbar = () => {
         <div className="navbar-container">
           <div className="navbar-brand">
             <Link to="/">
-              <h3>NZ</h3>
+              <h3 className="subtitle-custom">NZ</h3>
             </Link>
           </div>
 

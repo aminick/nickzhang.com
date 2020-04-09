@@ -4,6 +4,7 @@ import config from "../../data/SiteConfig";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/main.scss";
+import favicon from "../favicon.png";
 
 const Layout = ({ children }) => {
   return (
@@ -11,6 +12,7 @@ const Layout = ({ children }) => {
       <Helmet>
         <meta name="description" content={config.siteDescription} />
         <html lang="en" />
+        <link rel="shortcut icon" type="image/png" href={favicon} />
       </Helmet>
       <Navbar />
       <div className="layout-container">{children}</div>

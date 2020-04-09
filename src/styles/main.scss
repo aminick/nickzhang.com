@@ -26,9 +26,11 @@
 @import "./components/typewriter";
 @import "./components/button";
 
-// Page specific styles
+// Page styles
 @import "./pages/index";
-@import "./pages/post";
+
+// Template styles
+@import "./templates/post";
 
 // Layout styles
 @import "./layout/layout";

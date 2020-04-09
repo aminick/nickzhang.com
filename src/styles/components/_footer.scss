@@ -1,11 +1,9 @@
 .footer {
-  justify-content: center;
-  align-content: center;
   padding: 10px 0;
-  // position: absolute;
   bottom: 0;
   margin: 3rem 1.5rem;
   height: 4.5rem;
+  color: rgba($color: #fff, $alpha: 0.6);
 }
 
 @media screen and (min-width: $tablet) {
@@ -14,23 +12,27 @@
   }
 }
 
-.notice-container {
+.footer .container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: center;
   align-items: center;
-  margin-top: 25px;
 }
 
-@media (max-width: 640px - 1px) {
+.footer h6 {
+  margin: 0;
+  font-weight: 300;
+}
+
+.user-links-container {
+  margin-left: auto;
+  font-size: 1.55rem;
+}
+
+.user-links-container a + a {
+  margin-left: 0.25rem;
+}
+
+@media (max-width: $tablet) {
   .notice-container {
     justify-content: space-around;
   }
-}
-
-.notice-container h6 {
-  font-weight: 200;
-  text-align: center;
-  margin: 0;
 }

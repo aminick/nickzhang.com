@@ -20,7 +20,7 @@ const PostTemplate = ({ data }) => {
       <div className="content-container">
         <header className="content-header">
           <h2 className="subtitle-custom">{title}</h2>
-          <p className="date">
+          <p className="date subtitle-custom">
             {formatDate(date)} • {timeToRead} min read
           </p>
           <div className="tags-container">

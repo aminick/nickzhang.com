@@ -15,8 +15,10 @@ const Layout = ({ children }) => {
         <link rel="shortcut icon" type="image/png" href={favicon} />
       </Helmet>
       <Navbar />
-      <div className="layout-container">{children}</div>
-      <Footer config={config} />
+      <div className="layout-container">
+        {children}
+        <Footer config={config} />
+      </div>
     </>
   );
 };

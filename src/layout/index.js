@@ -10,6 +10,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Helmet>
+        <title>Nick Zhang</title>
         <meta name="description" content={config.siteDescription} />
         <html lang="en" />
         <link rel="shortcut icon" type="image/png" href={favicon} />

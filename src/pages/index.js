@@ -82,7 +82,8 @@ const IndexPage = ({ data }) => {
               data={[
                 "I code JavaScript.",
                 "I love React.",
-                "Something really really long.",
+                "I work with JAMstack.",
+                "Sometimes I DJ.",
               ]}
             />
           </div>

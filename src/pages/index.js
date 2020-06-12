@@ -1,12 +1,12 @@
-import React from "react";
-import Layout from "../layout";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import Typewriter from "../components/Typewriter";
-import List from "../components/List";
-import { Link, graphql } from "gatsby";
-import Img from "gatsby-image";
-import { formatDate } from "../utils";
+import React from 'react';
+import Layout from '../layout';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import Typewriter from '../components/Typewriter';
+import List from '../components/List';
+import { Link, graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import { formatDate } from '../utils';
 
 const renderArticlePreview = ({ node }) => {
   const {
@@ -80,10 +80,10 @@ const IndexPage = ({ data }) => {
             <h3 className="">My name is Nick Zhang.</h3>
             <Typewriter
               data={[
-                "I code JavaScript.",
-                "I love React.",
-                "I work with JAMstack.",
-                "Sometimes I DJ.",
+                'I code JavaScript.',
+                'I love React.',
+                'I work with JAMstack.',
+                'Music gives me life!',
               ]}
             />
           </div>
